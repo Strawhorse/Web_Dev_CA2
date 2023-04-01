@@ -1,0 +1,231 @@
+
+body{
+    background-image: url("Images/Cinema wallpaper.jpg");
+    opacity: 0.85;
+    background-repeat: repeat;
+}
+
+ /* Style the navigation bar */
+.navbar {
+  width: 100%;
+  background-image: url("Images/Cinema wallpaper.jpg");
+  overflow: auto;
+  min-height: 80px;
+}
+
+/* Navbar links */
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 22;
+}
+
+.navbar button {
+    border:none;
+}
+
+.navbar button {
+    font-size: 24px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    color: white;
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+  background-color: #000;
+}
+
+* {box-sizing:border-box}
+
+/* styling for search boxes above table */
+#myInput1 {
+  width: 50%; /* Half-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+  position: relative;
+  left: 45px;
+}
+
+#myInput2 {
+  width: 50%; /* Half-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+  position: relative;
+  left: 45px;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  position: center;
+  margin: 0;
+  position: relative;
+  margin: auto;
+  opacity: 0.8;
+}
+
+.slideshow-container h1{
+    color: white;
+    align: left;
+}
+
+#description {
+  position: center;
+  margin: 0;
+  position: relative;
+  margin: auto;
+  opacity: 0.8;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+.col-md h3{
+    text-align: center;
+    color: white;
+}
+
+
+/* Caption text below each movie poster*/
+.text {
+  color: #660033;
+  font-size: 20px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.text span {
+background-color: #ffe6e6;
+}
+
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+/* About button to show info about me*/
+.box {
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+p {
+    font-size: 17px;
+    align-items: center;
+}
+.box a {
+    display: inline-block;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 3px;
+}
+
+.box ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.modal {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(254, 126, 126, 0.7);
+    transition: all 0.4s;
+    visibility: hidden;
+    opacity: 0;
+}
+.content {
+    position: absolute;
+    background: white;
+    width: 500px;
+    padding: 1em 2em;
+    border-radius: 4px;
+}
+
+.modal:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* box close X in the top right*/
+.box-close {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    color: #fe0606;
+    text-decoration: none;
+    font-size: 40px;
+}
+
+/*Movie booking table*/
+#table_format {
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+  background-color:rgba(0, 0, 0, 0.3);
+}
+
+#table_format td, #table_format th {
+  border: 1px solid #ddd;
+  color: white;
+  padding: 10px;
+}
+
+#description {
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+  background-color:rgba(0, 0, 0, 0.3);
+  margin-right: auto;
+  padding: 10px;
+  ext-align: left;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
+/* to change colour when movie is hovered over */
+#table_format tr:hover {background-color: coral;}
+
+#table_format th {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: left;
+  color: black;
+  font-size: 25px;
+  background-color: #f1f1f1;
+  opacity: 0.3;
+}
+
+/* responsiveness to size change in viewport */
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}

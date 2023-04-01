@@ -1,0 +1,202 @@
+
+body{
+    background-image: url("Images/Cinema wallpaper.jpg");
+    opacity: 0.85;
+    background-repeat: repeat;
+
+}
+
+ /* Style the navigation bar */
+.navbar {
+  width: 100%;
+  background-image: url("Images/Cinema wallpaper.jpg");
+  overflow: auto;
+  min-height: 80px;
+}
+
+/* Navbar links */
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 22;
+}
+
+.navbar button {
+    border:none;
+}
+
+.navbar button {
+    font-size: 24px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    color: white;
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+  background-color: #000;
+}
+
+* {box-sizing:border-box}
+
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+/* About button to show info about me*/
+.box {
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+p {
+    font-size: 17px;
+    align-items: center;
+}
+.box a {
+    display: inline-block;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 3px;
+}
+
+.box ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.modal {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(254, 126, 126, 0.7);
+    transition: all 0.4s;
+    visibility: hidden;
+    opacity: 0;
+}
+.content {
+    position: absolute;
+    background: white;
+    width: 500px;
+    padding: 1em 2em;
+    border-radius: 4px;
+}
+
+.modal:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* box close X in the top right*/
+.box-close {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    color: #fe0606;
+    text-decoration: none;
+    font-size: 40px;
+}
+
+
+/* styling for booking form */
+
+#booking-form{
+      width: 500px;
+      margin: 0 auto;
+      padding: 50px;
+}
+
+
+div.main-group {
+  margin: 20px 0;
+}
+
+div.main-group.inlined {
+  width: 49%;
+  display: inline-block;
+  float: left;
+  margin-left: 1%;
+
+}
+
+label {
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-bottom: 10px;
+  font-size: 1.25em;
+}
+
+input, select, textarea {
+  border-radius: 2px;
+  border: 2px solid #777;
+  box-sizing: border-box;
+  font-size: 1.25em;
+  width: 100%;
+  padding: 10px;
+}
+
+div.main-group.inlined input {
+  width: 95%;
+  display: inline-block;
+}
+
+textarea {
+  height: 250px;
+}
+
+hr {
+  border: 1px dotted #ccc;
+}
+
+#button-center {
+  height: 60px;
+  background: orange;
+  border: none;
+  color: black;
+  font-size: 1.25em;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+#button-center:hover {
+    border: 2px solid black;
+}
+
+#button-boxContainer {
+  height: 60px;
+  background: orange;
+  border: none;
+  color: black;
+  font-size: 1.25em;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+#button-boxContainer:hover {
+    border: 2px solid black;
+}
+
+
+
+/* responsiveness to size change in viewport */
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
