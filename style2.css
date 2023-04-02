@@ -118,7 +118,7 @@ p {
 #booking-form{
       width: 500px;
       margin: 0 auto;
-      padding: 50px;
+      padding: 30px;
 }
 
 
@@ -137,7 +137,7 @@ div.main-group.inlined {
 label {
   display: block;
   font-family: Arial, Helvetica, sans-serif;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   font-size: 1.25em;
 }
 
@@ -145,9 +145,9 @@ input, select, textarea {
   border-radius: 2px;
   border: 2px solid #777;
   box-sizing: border-box;
-  font-size: 1.25em;
+  font-size: 1.1em;
   width: 100%;
-  padding: 10px;
+  padding: 5px;
 }
 
 div.main-group.inlined input {
@@ -227,6 +227,8 @@ table th {
   padding-bottom: 12px;
   color: white;
 }
+
+
 
 
 /* responsiveness to size change in viewport */
