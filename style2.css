@@ -194,6 +194,40 @@ hr {
 }
 
 
+/* Now style the table imported with php from sql  */
+/* first style the position of the div containing the table  */
+#loading-area {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.mytablecontainer table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: black;
+    opacity: 0.7;
+}
+
+table td, table th {
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table tr:hover {background-color: #ddd;}
+
+table th {
+  text-align: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  color: white;
+}
+
 
 /* responsiveness to size change in viewport */
 @keyframes fade {
