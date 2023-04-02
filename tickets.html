@@ -13,6 +13,7 @@
 <!--  Small javascript function to stop older dates being selected for the date of the movie-->
   <script type="text/javascript">
   window.onload=function(){
+<!--  set the date and then return it formatted as a String and split it on 'T' which is where the date ends-->
     var today = new Date().toISOString().split('T')[0];
 <!--    Set minimum date to today's date-->
     document.getElementsByName("viewing")[0].setAttribute('min', today);
@@ -74,7 +75,7 @@
       <input type="number" id="adult" name="tickets" placeholder="0" min="1" required>
     </div>
 
-<!--    Used small javascript function that loads at the start to make sure that the older dates are not available to book as a form of validation-->
+<!--    Used small javascript function that loads at the start (see top of file) to make sure that the older dates are not available to book as a form of validation-->
     <div class="main-group">
       <label for="movie-date">Movie date</label>
       <input type="date" id="movie-date" name="viewing" required>
