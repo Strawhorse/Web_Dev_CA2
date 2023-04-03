@@ -26,8 +26,8 @@
         <a href="bookings.html"><i class="fa fa-book" aria-hidden="true"></i> Previous bookings</a>
 
 <!--        New icon for user registration page-->
-        <a href="registration.html"><i class="fa fa-user" aria-hidden="true"></i> User Registration</a>
-        
+        <a href="registration.html" id="formButton"><i class="fa fa-user" aria-hidden="true"></i> User Registration</a>
+
         <a href="#popup-box1"><i class="fa fa-fw fa-user"></i> About</a>
      </div>
 
@@ -138,6 +138,21 @@
         </div>
     </div>
 
+
+    <form id="form1" action="registration.php" method="post">
+        <b>Full Name:</b> <input type="text" id="fullname" name="fullname" required>
+        <br><br>
+        <b> Email Address:</b>
+        <br>
+        <b>What is your sex?:</b>
+        <select id="sex" name="sex">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+        <br><br>
+        <button type="button" id="submit">Submit</button>
+    </form>
 
 
 <!--    Pop-up box with student details -->
