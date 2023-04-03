@@ -232,8 +232,6 @@ table th {
 }
 
 
-
-
 /* responsiveness to size change in viewport */
 @keyframes fade {
   from {opacity: .4}

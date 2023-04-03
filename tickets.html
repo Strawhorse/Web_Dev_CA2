@@ -20,7 +20,7 @@
   }
   </script>
 
-  <title>Web Dev CA2 sba22328</title>
+  <title>Tickets</title>
 </head>
 
 <body>
@@ -29,6 +29,9 @@
 <div class="navbar justify-content-center ">
 
   <a href="index.html"><i class="fa fa-fw fa-search"></i> Main page</a>
+
+  <!--        New icon for user registration page-->
+  <a href="registration.html"><i class="fa fa-user" aria-hidden="true"></i> User Registration</a>
 
   <!--        Link to pop open window with info-->
   <a href="#popup-box1"><i class="fa fa-fw fa-user"></i> About</a>
@@ -81,21 +84,14 @@
     <br>
     <div class="captcha" style="margin: auto; text-align:center;">
 
-<!--Form validation tick box for spybots here-->
-<!--      https://html.form.guide/checkbox/checkbox-validation-in-javascript/-->
+<!--Add a checkbox to avoid spam bots-->
+    <div class="main-group">
+      <input type="checkbox" id="terms" required>
+      <label for="terms">I am not a robot</label>
+    </div>
 
-
+<!--      Confirm button-->
     <input id="button-center" type="submit" value="Submit" name="submit">
-
-
-
-<!--https://www.loginradius.com/blog/identity/bot-attacks/-->
-
-
-<!--Lastly, to send confirmation emails -->
-<!--    https://blog.hubspot.com/marketing/html-form-email-->
-<!--https://code.tutsplus.com/tutorials/how-to-code-a-signup-form-with-email-confirmation--net-6860-->
-<!--https://blog.getform.io/how-to-create-an-html-form-that-sends-you-an-email/-->
 
   </form>
 </div>
