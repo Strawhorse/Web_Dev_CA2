@@ -8,7 +8,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style2.css">
   <!--    Link to CDN for jQuery online so fewer files to upload-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>-->
 
 <!--  Small javascript function to stop older dates being selected for the date of the movie-->
   <script type="text/javascript">
@@ -30,9 +30,6 @@
 
   <a href="index.html"><i class="fa fa-fw fa-search"></i> Main page</a>
 
-  <!--        New icon for user registration page-->
-  <a href="registration.html"><i class="fa fa-user" aria-hidden="true"></i> User Registration</a>
-
   <!--        Link to pop open window with info-->
   <a href="#popup-box1"><i class="fa fa-fw fa-user"></i> About</a>
 </div>
@@ -41,20 +38,20 @@
 <!--All fields are 'required' to make sure that no null values are passed in (movie has default choice of Fight Club so will never be null-->
 
 <div id="booking-form">
-  <form action="reservation.php" method="post">
+  <form method="post" action="reservation.php" onsubmit="return validateCaptcha()">
     <div class="main-group">
-      <label for="name">Your Name</label>
+      <label for="name" style="color: white;">Your Name</label>
 <!--      Adding a minlength html tag of 5 to make sure name has at least a basic length of 5-->
       <input type="text" minlength="5" id="name" name="patron_name" placeholder="John Doe" required>
     </div>
     <div class="main-group">
-      <label for="email">Your E-mail</label>
+      <label for="email" style="color: white;">Your E-mail</label>
 <!--      Input type is set to email here so no regex is required as it will automatically ensure a correctly formatted email address is included-->
       <input type="email" id="email" name="email_address" placeholder="john.doe@email.com" required>
     </div>
     <hr>
     <div class="main-group">
-      <label for="movie-name">Pick a movie:</label>
+      <label for="movie-name" style="color: white;">Pick a movie:</label>
       <select id="movie-name" name="movie name">
         <option value="Fight Club">Fight Club</option>
         <option value="The Big Short">The Big Short</option>
@@ -71,28 +68,36 @@
       </select>
     </div>
     <div class="main-group">
-      <label for="adult">Tickets</label>
+      <label for="adult" style="color: white;">Tickets</label>
 <!--      Adding a minimum of 1 ticket check on the booking-->
       <input type="number" id="adult" name="tickets" placeholder="0" min="1" required>
     </div>
 
 <!--    Used small javascript function that loads at the start (see top of file) to make sure that the older dates are not available to book as a form of validation-->
     <div class="main-group">
-      <label for="movie-date">Movie date</label>
+      <label for="movie-date" style="color: white;">Movie date</label>
       <input type="date" id="movie-date" name="viewing" required>
     </div>
     <br>
     <div class="captcha" style="margin: auto; text-align:center;">
 
+<!--Hide the antispam element so that the bot will fill it in but regular users won't -->
+      <p class="antispam" style="display:none;">Leave this empty: <input type="text" name="url" /></p>
+
 <!--Add a checkbox to avoid spam bots-->
     <div class="main-group">
       <input type="checkbox" id="terms" required>
-      <label for="terms">I am not a robot</label>
+      <label for="terms" style="color: white;">I am not a robot</label>
     </div>
+
+<!--      Captcha box: cannot get to work, details in report-->
+<!--      <div id="captcha">-->
+<!--      </div>-->
+<!--      <input type="text" placeholder="Captcha" id="cpatchaTextBox"/>-->
 
 <!--      Confirm button-->
     <input id="button-center" type="submit" value="Submit" name="submit">
-
+    </div>
   </form>
 </div>
 
@@ -138,8 +143,46 @@
 </div>
 
 
-<!--    Javascript file linked below jquery to overwrite if necessary-->
-<!--<script src="script.js"></script>-->
+<!-- captcha script from class: cannot get to work, see report for details-->
+<!--  <script>-->
+<!--    var code;-->
+<!--    function createCaptcha() {-->
+<!--      //clear the contents of captcha div first-->
+<!--      document.getElementById('captcha').innerHTML = "";-->
+<!--      var charsArray =-->
+<!--      "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@!#$%^&*";-->
+<!--      var lengthOtp = 6;-->
+<!--      var captcha = [];-->
+<!--      for (var i = 0; i < lengthOtp; i++) {-->
+<!--        //below code will not allow Repetition of Characters-->
+<!--        var index = Math.floor(Math.random() * charsArray.length + 1); //get the next character from the array-->
+<!--        if (captcha.indexOf(charsArray[index]) == -1)-->
+<!--          captcha.push(charsArray[index]);-->
+<!--        else i&#45;&#45;;-->
+<!--      }-->
+<!--      var canv = document.createElement("canvas");-->
+<!--      canv.id = "captcha";-->
+<!--      canv.width = 100;-->
+<!--      canv.height = 50;-->
+<!--      var ctx = canv.getContext("2d");-->
+<!--      ctx.font = "25px Georgia";-->
+<!--      ctx.strokeText(captcha.join(""), 0, 30);-->
+<!--      //storing captcha so that can validate you can save it somewhere else according to your specific requirements-->
+<!--      code = captcha.join("");-->
+<!--      document.getElementById("captcha").appendChild(canv); // adds the canvas to the body element-->
+<!--    }-->
+<!--    function validateCaptcha() {-->
+<!--              event.preventDefault();-->
+<!--              debugger-->
+<!--              if (document.getElementById("cpatchaTextBox").value == code) {-->
+<!--                alert("Captcha correct. Submitting...");-->
+<!--                return true;-->
+<!--              }else{-->
+<!--                alert("Invalid Captcha. try Again");-->
+<!--                createCaptcha();-->
+<!--              }-->
+<!--            }-->
+<!--    </script>-->
 
 </body>
 </html>

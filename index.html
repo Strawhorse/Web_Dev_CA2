@@ -27,7 +27,8 @@
         <a href="bookings.html"><i class="fa fa-book" aria-hidden="true"></i> Previous bookings</a>
 
 <!--        New icon for user registration page-->
-        <a href="registration.html" id="formButton"><i class="fa fa-user" aria-hidden="true"></i> User Registration</a>
+<!--        <a href="registration.html" id="formButton"><i class="fa fa-user" aria-hidden="true"></i> User Registration</a>-->
+        <a href="javascript:SwapDivsWithClick('movie_slider','booking-form')"> User Registration</a>
 
         <a href="#popup-box1"><i class="fa fa-fw fa-user"></i> About</a>
      </div>
@@ -56,7 +57,7 @@
                 <input type="text" id="myInput2" onkeyup="movieCastSearch()" placeholder="Search cast names..">
             </div>
 
-            <div class="col-md">
+            <div id="movie_slider" class="col-md" style="display:block">
                 <!-- Slideshow container -->
                 <div class="slideshow-container" style="text-align: center;">
 
@@ -136,24 +137,51 @@
                 </div>
                 <br>
             </div>
+            <div id="booking-form" class="col-md" style="display:none;">
+                <form style="background-color: grey; opacity: 0.6;" action="registration.php" method="post">
+                    <div class="main-group">
+                        <br>
+                        <h2 style="color: white; text-align: center; font-size: 30px;">To register, please enter your details below</h2>
+                    </div>
+                    <div class="main-group" style="color: white; text-align: center; font-size: 30px;">
+                        <label for="fullname">Full Name</label>
+
+                        <input type="text" id="fullname" name="fullname" required>
+                    </div>
+
+                    <div class="main-group" style="color: white; text-align: center; font-size: 30px;">
+                        <label for="email">Your E-mail</label>
+                        <!--      Input type is set to email here so no regex is required as it will automatically ensure a correctly formatted email address is included-->
+                        <input type="email" id="email" name="email_address" placeholder="john.doe@email.com" required>
+                    </div>
+
+                    <div class="main-group" style="color: white; text-align: center; font-size: 30px;">
+                        <label for="sex">What is your sex?</label>
+                        <select id="sex" name="sex">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <br>
+                    <div class="captcha" style="margin: auto; text-align:center;">
+
+                        <!--Add a checkbox to avoid spam bots-->
+                        <div class="main-group">
+                            <input type="checkbox" id="terms" required>
+                            <label for="terms">I am not a robot</label>
+                        </div>
+
+                        <!--      Confirm button-->
+                        <input id="button-center" type="submit" value="Submit" name="submit">
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 
 
-    <form id="form1" action="registration.php" method="post">
-        <b>Full Name:</b> <input type="text" id="fullname" name="fullname" required>
-        <br><br>
-        <b> Email Address:</b>
-        <br>
-        <b>What is your sex?:</b>
-        <select id="sex" name="sex">
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Other">Other</option>
-        </select>
-        <br><br>
-        <button type="button" id="submit">Submit</button>
-    </form>
 
 
 <!--    Pop-up box with student details -->
@@ -205,6 +233,19 @@
 
 <!--    Javascript file linked below jquery to overwrite if necessary-->
     <script src="script.js"></script>
+    <script>
+      function SwapDivsWithClick(div1, div2) {
+      d1 = document.getElementById(div1);
+      d2 = document.getElementById(div2);
+      if (d2.style.display == "none") {
+        d1.style.display = "none";
+        d2.style.display = "block";
+      } else {
+        d1.style.display = "block";
+        d2.style.display = "none";
+      }
+    }
+    </script>
 
 </body>
 </html>
